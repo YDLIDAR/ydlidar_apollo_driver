@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package apollo.drivers.ydlidar;
+
+import "modules/drivers/ydlidar/proto/ydlidar.proto";
+
+message Config {
+  optional string frame_id = 1;
+  optional string scan_channel = 2;
+  optional string port = 3;
+  optional string ignore_array = 4;
+  optional int32 baudrate = 5;
+  optional int32 lidar_type = 6;
+  optional int32 device_type = 7;
+  optional int32 sample_rate = 8;
+  optional int32 abnormal_check_count = 9;
+  optional bool resolution_fixed = 10;
+  optional bool reversion = 11;
+  optional bool inverted = 12;
+  optional bool auto_reconnect = 13;
+  optional bool isSingleChannel = 14;
+  optional bool intensity = 15;
+  optional bool support_motor_dtr = 16;
+  optional double max_range = 17;
+  optional double min_range = 18;
+  optional double max_angle = 19;
+  optional double min_angle = 20;
+  optional double frequency = 21 [default = 10.0];
+  optional string pc_channel = 22;
+}
+

@@ -1,0 +1,34 @@
+syntax = "proto2";
+
+package apollo.drivers.ydlidar;
+
+import "modules/common/proto/header.proto";
+
+message LaserConfig {
+  /// Start angle for the laser scan [rad].  0 is forward and angles are measured clockwise when viewing YDLIDAR from the top.
+  optional double min_angle = 1;
+  /// Stop angle for the laser scan [rad].   0 is forward and angles are measured clockwise when viewing YDLIDAR from the top.
+  optional double max_angle = 2;
+  /// angle resoltuion [rad]
+  optional double angle_increment = 3;
+  /// Scan resoltuion [s]
+  optional double time_increment = 4;
+  /// Time between scans
+  optional double scan_time = 5;
+  /// Minimum range [m]
+  optional double min_range = 6;
+  /// Maximum range [m]
+  optional double max_range = 7;
+}
+
+message LaserPoint {
+  optional double angle     = 1;
+  optional double range     = 2;
+  optional double intensity = 3;
+}
+
+message LidarScan {
+  optional apollo.common.Header header = 1;
+  optional LaserConfig config =2;
+  repeated LaserPoint points = 3;
+}

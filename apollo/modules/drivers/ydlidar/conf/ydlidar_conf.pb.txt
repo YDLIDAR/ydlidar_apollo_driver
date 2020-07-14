@@ -1,0 +1,24 @@
+frame_id: "ydlidar_horizon_front_center"
+scan_channel: "/apollo/sensor/ydlidar/front/center/LidarScan"
+pc_channel: "/apollo/sensor/ydlidar/front/center/PointCloud"
+port: "/dev/ydlidar"
+ignore_array: ""
+baudrate: 512000
+lidar_type: 0
+device_type: 0
+sample_rate: 20
+abnormal_check_count: 4
+resolution_fixed: false
+reversion: true
+inverted: true
+auto_reconnect: true
+isSingleChannel: false
+intensity: false
+support_motor_dtr: false
+max_angle: 180.0
+min_angle: -180.0
+max_range: 64.0
+min_range: 0.01
+frequency: 10.0
+
+

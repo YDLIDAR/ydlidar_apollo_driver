@@ -1,0 +1,19 @@
+# Define all coms in DAG streaming.
+
+##################################################
+#                   drivers                      #
+##################################################
+
+module_config {
+    module_library : "/apollo/bazel-bin/modules/drivers/ydlidar/driver/libydlidar_driver_component.so"
+
+    components {
+      class_name : "YDLidarDriverComponent"
+      config {
+        name : "ydlidar_front_center_driver"
+        config_file_path : "/apollo/modules/drivers/ydlidar/conf/ydlidar_conf.pb.txt"
+      }
+    }
+}
+
+

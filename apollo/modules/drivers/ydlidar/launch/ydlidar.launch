@@ -1,0 +1,7 @@
+<cyber>
+    <module>
+        <name>ydlidar</name>
+        <dag_conf>/apollo/modules/drivers/ydlidar/dag/ydlidar.dag</dag_conf>
+        <process_name>ydlidar</process_name>
+    </module>
+</cyber>
