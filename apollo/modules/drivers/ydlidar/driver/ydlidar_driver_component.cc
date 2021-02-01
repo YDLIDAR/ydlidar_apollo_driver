@@ -175,7 +175,6 @@ bool YDLidarDriverComponent::Init() {
   runing_ = true;
   device_thread_ = std::shared_ptr<std::thread>(
                      new std::thread(std::bind(&YDLidarDriverComponent::scan_data_poll, this)));
-  device_thread_->detach();
 
   return true;
 }
@@ -232,7 +231,7 @@ void YDLidarDriverComponent::scan_data_poll() {
 
   dvr_->turnOff();
   dvr_->disconnecting();
-  AERROR << "CompYDDriver thread exit";
+  AWARN << "CompYDDriver thread exit";
   runing_ = false;
 }
 

@@ -34,7 +34,11 @@ using apollo::drivers::PointCloud;
 
 class YDLidarDriverComponent : public Component<> {
  public:
-  ~YDLidarDriverComponent() {}
+  ~YDLidarDriverComponent() {
+    if (device_thread_->joinable()) {
+      device_thread_->join();
+    }
+  }
   bool Init() override;
 
  private:
